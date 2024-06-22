@@ -9,10 +9,12 @@ Clona el repositorio:
 git clone https://github.com/JoelFedericoCabral/challengeApiML.git
 
 ## Uso
-1- Abre index.html en tu navegador preferido.
-2- Utiliza la barra de busqueda para encontrar productos.
-3- Puedes ver el detalle del producto y si te gusta puedes añadir el producto al carrito.
-4- Finaliza la compra (sin autenticación, de forma simple).
+
+1. Abre index.html en tu navegador preferido.
+2. Utiliza la barra de búsqueda para encontrar productos.
+3. Puedes ver el detalle del producto y si te gusta, puedes añadir el producto al carrito.
+4. Finaliza la compra (sin autenticación, de forma simple).
+
 
 ## Contribucion
 Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
