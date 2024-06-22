@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reseteo básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(171,169,214);
+    background: linear-gradient(90deg, rgba(171,169,214,1) 0%, rgba(208,212,170,1) 0%, rgba(208,213,167,1) 2%, rgba(225,242,13,1) 100%, rgba(255,244,0,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #e5fd07;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-left, #header-center, #header-right {
+    display: flex;
+    align-items: center;
+}
+
+#header-center {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 20px;
+}
+
+/* Estilos del botón de inicio */
+#home-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background-color: #3483fa;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#home-button:hover {
+    background-color: #2968c8;
+}
+
+/* Estilos del icono del carrito */
+#cart-icon {
+    display: flex;
+    align-items: center;
+}
+
+#cart-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilos de la sección de búsqueda */
+#search-section {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    max-width: 600px; /* Ancho máximo para la barra de búsqueda */
+}
+
+#search-input {
+    padding: 12px;
+    font-size: 18px;
+    width: 100%; /* Hacer el input más ancho */
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1; /* Permitir que el input crezca */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más estético */
+}
+
+#search-button {
+    padding: 12px 24px; /* Ajustar el padding para un botón más grande */
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+    cursor: pointer;
+    background-color: #3483fa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más estético */
+}
+
+#search-button:hover {
+    background-color: #2968c8;
+}
+
+/* Estilos del main */
+main {
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Estilos del carrusel */
+#carousel-section {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Ajustar la altura del carrusel según sea necesario */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantener la relación de aspecto y recortar para llenar el contenedor */
+    border-radius: 4px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Estilos de la sección de resultados */
+#results-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos de los productos */
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 350px; /* Ajuste la altura según sea necesario */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.product h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: auto; /* Empuja el precio hacia la parte inferior */
+}
+
+.product a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #3483fa;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Agrega margen superior para separar el botón del precio */
+}
+
+.product a:hover {
+    background-color: #2968c8;
+}
+
+/* Estilos específicos para la página del carrito */
+.cart-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-product img {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.cart-product-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.cart-product-details h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #2c3e50;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cart-product-details p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #7f8c8d;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cart-product-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-product-actions button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-product-actions button:hover {
+    background-color: #c9302c;
+}
+
+/* Estilos del botón de finalizar compra */
+#checkout-button {
+    background-color: #5cb85c;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#checkout-button:hover {
+    background-color: #4cae4c;
+    transform: translateY(-2px);
+}
+
+#checkout-button:active {
+    transform: translateY(0);
+}
+
+/* Estilos del mensaje de carrito vacío */
+#cart-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos del precio total */
+#cart-section h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: right;
+    color: #2c3e50;
+}
+
+/* Estilos de la sección de detalles del producto */
+#product-details {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#product-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#product-details img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+#product-details h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#product-details p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#add-to-cart-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #3483fa;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Agrega margen superior para separar el botón del texto */
+}
+
+#add-to-cart-button:hover {
+    background-color: #2968c8;
+}
+
+/* Estilos de las ofertas del día */
+#offers-section {
+    padding: 20px;
+    text-align: center;
+}
+
+#offers-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.offer-item {
+    display: inline-block;
+    width: 30%;
+    margin: 0 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.offer-item:hover {
+    transform: translateY(-5px);
+}
+
+.offer-item img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.offer-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.offer-item p {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+/* Estilos de la sección de información para usuarios */
+#info-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#info-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#info-section p {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+/* Estilos de la sección de categorías */
+#categories-section {
+    padding: 20px;
+    text-align: center;
+}
+
+#categories-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.category-item {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    background-color: #3483fa;
+    color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #2968c8;
+}
+
+
+/* Estilos para los botones de paginación */
+#pagination-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#pagination-section button {
+    background-color: #3483fa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#pagination-section button:hover {
+    background-color: #2968c8;
+}
+
+#pagination-section button.active {
+    background-color: #2968c8;
+}

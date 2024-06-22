@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Compras</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace actualizado al archivo CSS -->
+</head>
+<body>
+    <header>
+        <div id="header-left">
+            <a href="index.html" id="home-button">Inicio</a>
+        </div>
+        <div id="header-center">
+            <div id="search-section">
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button id="search-button">Buscar</button>
+            </div>
+        </div>
+        <div id="header-right">
+            <div id="cart-icon">
+                <a href="cart.html">
+                    <img src="assets/images/cart-icon.png" alt="Carrito de Compras"> <!-- Enlace actualizado a la imagen -->
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="carousel-section">
+            <div class="carousel">
+                <!-- Imágenes del carrusel se llenarán dinámicamente -->
+            </div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </section>
+        <section id="results-section">
+            <!-- Los resultados de búsqueda se mostrarán aquí -->
+        </section>
+        <section id="pagination-section">
+            <!-- Los botones de paginación se mostrarán aquí -->
+        </section>
+        <section id="offers-section">
+            <!-- Ofertas del día se llenarán dinámicamente -->
+        </section>
+        <section id="info-section">
+            <h2>Información para Usuarios</h2>
+            <p>Aquí puedes encontrar información útil sobre cómo comprar, métodos de pago, y más.</p>
+        </section>
+        <section id="categories-section">
+            <h2>Categorías</h2>
+            <div class="category-item">Electrónica</div>
+            <div class="category-item">Hogar y Cocina</div>
+            <div class="category-item">Moda</div>
+        </section>
+    </main>
+    <script src="js/script.js"></script> <!-- Enlace actualizado al archivo JavaScript -->
+</body>
+</html>
+
