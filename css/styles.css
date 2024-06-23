@@ -10,8 +10,7 @@
 /* Estilos del cuerpo */
 body {
     font-family: 'Roboto', sans-serif;
-    background: rgb(171,169,214);
-    background: linear-gradient(90deg, rgba(171,169,214,1) 0%, rgba(208,212,170,1) 0%, rgba(208,213,167,1) 2%, rgba(225,242,13,1) 100%, rgba(255,244,0,1) 100%);
+    background: #f0f2f5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,11 +19,10 @@ body {
 
 /* Estilos del encabezado */
 header {
-    background-color: #e5fd07;
+    background-color: #e0f008;
     padding: 20px;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,11 +47,10 @@ header h1 {
 
 /* Estilos del botón de inicio */
 #home-button {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 500;
     padding: 10px 20px;
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -61,11 +58,12 @@ header h1 {
 }
 
 #home-button:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
 
 /* Estilos del icono del carrito */
 #cart-icon {
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -75,50 +73,55 @@ header h1 {
     height: 40px;
 }
 
+/* Estilos para el contador del carrito */
 #cart-count {
     background-color: red;
     color: white;
     border-radius: 50%;
     padding: 5px 10px;
     font-size: 14px;
-    margin-left: 10px;
-    position: relative;
+    position: absolute;
+    top: -10px;
+    right: -10px;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilos de la sección de búsqueda */
 #search-section {
     display: flex;
     align-items: center;
-    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
-    max-width: 600px; /* Ancho máximo para la barra de búsqueda */
+    width: 100%;
+    max-width: 600px;
 }
 
 #search-input {
     padding: 12px;
     font-size: 18px;
-    width: 100%; /* Hacer el input más ancho */
+    width: 100%;
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    flex-grow: 1; /* Permitir que el input crezca */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más estético */
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #search-button {
-    padding: 12px 24px; /* Ajustar el padding para un botón más grande */
-    font-size: 18px; /* Aumentar el tamaño de la fuente */
+    padding: 12px 24px;
+    font-size: 18px;
     cursor: pointer;
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra para un efecto más estético */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #search-button:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
 
 /* Estilos del main */
@@ -136,7 +139,7 @@ main {
     overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 300px; /* Ajustar la altura del carrusel según sea necesario */
+    height: 400px;
 }
 
 .carousel {
@@ -154,7 +157,7 @@ main {
 .carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantener la relación de aspecto y recortar para llenar el contenedor */
+    object-fit: cover;
     border-radius: 4px;
 }
 
@@ -184,12 +187,12 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
 /* Estilos de la sección de resultados */
 #results-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 /* Estilos de los productos */
@@ -204,7 +207,7 @@ main {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 350px; /* Ajuste la altura según sea necesario */
+    min-height: 350px;
 }
 
 .product:hover {
@@ -221,7 +224,6 @@ main {
 }
 
 .product h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: 500;
     color: #2c3e50;
@@ -231,14 +233,13 @@ main {
 }
 
 .product p {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #7f8c8d;
     margin-bottom: 8px;
     line-height: 1.5;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-    margin-top: auto; /* Empuja el precio hacia la parte inferior */
+    margin-top: auto;
 }
 
 .product a {
@@ -246,16 +247,16 @@ main {
     padding: 15px 30px;
     font-size: 18px;
     cursor: pointer;
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Agrega margen superior para separar el botón del precio */
+    margin-top: 20px;
 }
 
 .product a:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
 
 /* Estilos específicos para la página del carrito */
@@ -289,7 +290,6 @@ main {
 }
 
 .cart-product-details h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 12px;
@@ -300,7 +300,6 @@ main {
 }
 
 .cart-product-details p {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 8px;
@@ -333,7 +332,6 @@ main {
 #checkout-button {
     background-color: #5cb85c;
     color: white;
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 500;
     padding: 15px 30px;
@@ -358,7 +356,6 @@ main {
 
 /* Estilos del mensaje de carrito vacío */
 #cart-section p {
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: #7f8c8d;
@@ -368,7 +365,6 @@ main {
 
 /* Estilos del precio total */
 #cart-section h3 {
-    font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-top: 20px;
@@ -404,7 +400,6 @@ main {
 }
 
 #product-details h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 500;
     color: #2c3e50;
@@ -414,7 +409,6 @@ main {
 }
 
 #product-details p {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #7f8c8d;
@@ -428,16 +422,16 @@ main {
     padding: 15px 30px;
     font-size: 18px;
     cursor: pointer;
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Agrega margen superior para separar el botón del texto */
+    margin-top: 20px;
 }
 
 #add-to-cart-button:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
 
 /* Estilos de las ofertas del día */
@@ -517,7 +511,7 @@ main {
     display: inline-block;
     padding: 15px 30px;
     margin: 10px;
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     border-radius: 4px;
     font-size: 18px;
@@ -526,9 +520,8 @@ main {
 }
 
 .category-item:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
-
 
 /* Estilos para los botones de paginación */
 #pagination-section {
@@ -538,7 +531,7 @@ main {
 }
 
 #pagination-section button {
-    background-color: #3483fa;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -549,9 +542,71 @@ main {
 }
 
 #pagination-section button:hover {
-    background-color: #2968c8;
+    background-color: #0056b3;
 }
 
 #pagination-section button.active {
-    background-color: #2968c8;
+    background-color: #0056b3;
+}
+
+/* Media Queries para Responsividad Adicional */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+
+    #results-section {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .product {
+        padding: 10px;
+    }
+
+    .product img {
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo {
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .product h2 {
+        font-size: 18px;
+    }
+
+    .product p {
+        font-size: 14px;
+    }
+
+    .offer-item {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    #search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

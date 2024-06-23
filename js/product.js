@@ -100,3 +100,11 @@ getProductDetails(productId);
 
 // Llamar a la función para actualizar el contador al cargar la página
 updateCartCount();
+
+// Configurar la búsqueda desde los detalles del producto
+document.getElementById('search-button').addEventListener('click', () => performSearch(1));
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        performSearch(1);
+    }
+});

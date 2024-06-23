@@ -50,6 +50,7 @@ function performSearch(page = 1) {
     }
 }
 
+// Agregar eventos a los elementos de búsqueda
 document.getElementById('search-button').addEventListener('click', () => performSearch(1));
 document.getElementById('search-input').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
@@ -57,8 +58,10 @@ document.getElementById('search-input').addEventListener('keypress', function(ev
     }
 });
 
+// Agregar evento al botón de inicio para limpiar el estado
 document.getElementById('home-button').addEventListener('click', clearState);
 
+// Función para mostrar los resultados de la búsqueda
 function displayResults(products) {
     const resultsSection = document.getElementById('results-section');
     resultsSection.innerHTML = '';
@@ -76,6 +79,7 @@ function displayResults(products) {
     });
 }
 
+// Función para configurar la paginación
 function setupPagination(totalProducts) {
     const paginationSection = document.getElementById('pagination-section');
     paginationSection.innerHTML = '';
@@ -114,14 +118,17 @@ function setupPagination(totalProducts) {
     }
 }
 
+// Función para actualizar el contador del carrito
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
     document.getElementById('cart-count').innerText = cartCount;
 }
 
+// Actualizar el contador del carrito al cargar la página
 updateCartCount();
 
+// Función para obtener los productos destacados de la API de MercadoLibre
 function getFeaturedProducts() {
     const url = 'https://api.mercadolibre.com/sites/MLA/search?q=destacados&limit=6';
 
@@ -135,18 +142,27 @@ function getFeaturedProducts() {
         .catch(error => console.error('Error:', error));
 }
 
-function displayCarousel(products) {
+// Función para mostrar las imágenes del carrusel
+function displayCarousel() {
     const carousel = document.querySelector('.carousel');
     carousel.innerHTML = '';
 
-    products.forEach(product => {
+    // Rutas de las imágenes locales
+    const images = [
+        'assets/images/carousel2.jpg',
+        'assets/images/carousel1.jpg',
+        'assets/images/carousel3.jpg'
+    ];
+
+    images.forEach(imageSrc => {
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
-        carouselItem.innerHTML = `<img src="${product.thumbnail}" alt="${product.title}">`;
+        carouselItem.innerHTML = `<img src="${imageSrc}" alt="Carousel Image">`;
         carousel.appendChild(carouselItem);
     });
 }
 
+// Función para mostrar las ofertas del día
 function displayOffers(products) {
     const offersSection = document.getElementById('offers-section');
     offersSection.innerHTML = '<h2>Ofertas del Día</h2>';
@@ -163,10 +179,12 @@ function displayOffers(products) {
     });
 }
 
+// Obtener y mostrar los productos destacados
 getFeaturedProducts();
 
 let currentSlide = 0;
 
+// Función para mover el carrusel
 function moveCarousel(direction) {
     const carousel = document.querySelector('.carousel');
     const totalSlides = document.querySelectorAll('.carousel-item').length;
@@ -182,6 +200,7 @@ function moveCarousel(direction) {
     carousel.style.transform = `translateX(${offset}%)`;
 }
 
+// Cargar las imágenes del carrusel al cargar la página
 function loadCarouselImages() {
     getFeaturedProducts();
 }
