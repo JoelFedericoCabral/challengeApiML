@@ -195,6 +195,15 @@ main {
     margin-top: 20px;
 }
 
+/* Estilo para el título de los resultados */
+.results-title {
+    grid-column: 1 / -1; /* Hace que el título ocupe todo el ancho del contenedor */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
 /* Estilos de los productos */
 .product {
     display: flex;

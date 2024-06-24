@@ -66,6 +66,12 @@ function displayResults(products) {
     const resultsSection = document.getElementById('results-section');
     resultsSection.innerHTML = '';
 
+    // Crear y añadir el título
+    const title = document.createElement('h2');
+    title.classList.add('results-title');
+    title.innerText = 'Resultados de la búsqueda';
+    resultsSection.appendChild(title);
+
     products.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');

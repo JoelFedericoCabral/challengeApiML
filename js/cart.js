@@ -43,7 +43,7 @@ function displayCart() {
     // Mostrar el precio total
     const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
     const totalDiv = document.createElement('div');
-    totalDiv.innerHTML = `<h3>Total: $${totalPrice}</h3>`;
+    totalDiv.innerHTML = `<h3>Total: $${totalPrice.toFixed(2)}</h3>`;
     cartSection.appendChild(totalDiv);
 
     checkoutButton.style.display = 'block'; // Mostrar el botón de finalizar compra si hay productos
