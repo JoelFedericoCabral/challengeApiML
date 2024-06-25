@@ -77,11 +77,17 @@ function removeFromCart(productId) {
 
 // Función para finalizar la compra
 function checkout() {
-    if (confirm('¿Estás seguro de que deseas finalizar la compra?')) {
+    const checkoutButton = document.getElementById('checkout-button');
+    
+    if (confirm('¿Estas seguro de que deseas finalizar la compra?')) {
         localStorage.removeItem('cart'); // Limpiar el carrito
-        alert('¡Compra finalizada con éxito!');
-        displayCart(); // Actualizar la vista del carrito
-        updateCartCount();
+        checkoutButton.innerText = '¡Compra finalizada!';
+        
+        setTimeout(() => {
+            checkoutButton.innerText = 'Finalizar Compra';
+            displayCart(); // Actualizar la vista del carrito
+            updateCartCount();
+        }, 1500);
     }
 }
 

@@ -66,7 +66,7 @@ function displayResults(products) {
     const resultsSection = document.getElementById('results-section');
     resultsSection.innerHTML = '';
 
-    // Crear y añadir el título
+    // "Resultados de la busqueda"
     const title = document.createElement('h2');
     title.classList.add('results-title');
     title.innerText = 'Resultados de la búsqueda';
@@ -205,6 +205,10 @@ function moveCarousel(direction) {
     const offset = -currentSlide * 100;
     carousel.style.transform = `translateX(${offset}%)`;
 }
+// Inicia el carrusel automáticamente
+setInterval(() => {
+    moveCarousel(1); // Mover hacia adelante
+}, 3000); // Cambiar slide cada 3 segundos
 
 // Cargar las imágenes del carrusel al cargar la página
 function loadCarouselImages() {
